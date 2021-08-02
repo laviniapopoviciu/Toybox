@@ -21,3 +21,4 @@ controller/KidController.class
 repository/ToyRepository.class
 service/ToyService.class
 controller/ToyController.class
+db/DatabaseCreator.class
