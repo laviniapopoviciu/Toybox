@@ -2,7 +2,10 @@ package db;
 
 
 
+import java.util.HashMap;
 import java.util.List;
+
+import org.eclipse.persistence.jpa.PersistenceProvider;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -30,7 +33,8 @@ private static void insertDummyData() {
 
 	
 	
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ToyboxDBJPA");
+
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("ToyboxDBJPA");
 		EntityManager em = emf.createEntityManager();
 		
 		EntityTransaction et = em.getTransaction();
@@ -38,7 +42,7 @@ private static void insertDummyData() {
 
 		Kid kid = new Kid(0l,"Tudor", "Popoviciu");
 		List<Toy> toys =List.of(new Toy (0l, "Lego","/Users/laviniapopoviciu/Git/Toybox/ToyBox/src/images/congy-yuan-NKMtIVtMMG8-unsplash.jpg"),
-				new Toy(1l, "car", "/Users/laviniapopoviciu/Git/Toybox/ToyBox//src/images/elodie-oudot-TaEd6ndkRWM-unsplash.jpg"));
+				new Toy(1l, "car", "/Users/laviniapopoviciu/Git/Toybox/ToyBox/src/images/elodie-oudot-TaEd6ndkRWM-unsplash.jpg"));
 		Toybox toybox = new Toybox(0l,"Jucarii", toys , kid );
 	
 		
