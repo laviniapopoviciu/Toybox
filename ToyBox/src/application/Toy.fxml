@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ToyController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0">
+         <children>
+            <SplitPane dividerPositions="0.5337423312883436" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <AnchorPane>
+                     <children>
+                        <HBox alignment="CENTER" layoutY="-6.0" prefHeight="25.0" prefWidth="314.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+                           <children>
+                              <Label text="Spielzeuge" />
+                              <ImageView fitHeight="52.0" fitWidth="64.0">
+                                 <image>
+                                    <Image url="@../images/imgbin_free-content-toy-open-png.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="startButton" mnemonicParsing="false" onAction="#handleStartPressed" text="Start">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="90.0" right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="toyTable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                           <columns>
+                              <TableColumn fx:id="nameTableColumn" maxWidth="100.0" text="Name" />
+                              <TableColumn fx:id="KidTableColumn" maxWidth="100.0" prefWidth="75.0" text="Kind" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <SplitPane dividerPositions="0.6401869158878505" minWidth="300.0" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <VBox alignment="TOP_CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label text="Spielzeug Info" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT" spacing="10.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="63.0" text="Name:" />
+                                          <TextField fx:id="nameText" prefHeight="27.0" prefWidth="197.0" promptText="no toy selected" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT" spacing="10.0">
+                                       <children>
+                                          <Label text="Photo Url:" />
+                                          <TextField fx:id="urlText" prefWidth="100.0" promptText="no picture selected" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="selectButton" mnemonicParsing="false" onAction="#handleSelectFileAction" text="Select" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT" spacing="10.0">
+                                       <children>
+                                          <Label text="Kind" />
+                                          <ComboBox fx:id="kidComboBox" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT" prefHeight="83.0" prefWidth="278.0" spacing="10.0">
+                                       <children>
+                                          <VBox prefHeight="83.0" prefWidth="159.0">
+                                             <children>
+                                                <Button fx:id="newButton" mnemonicParsing="false" onAction="#handleToyAction" prefHeight="27.0" prefWidth="121.0" text="Neue Spielzeug" />
+                                                <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClearToyAction" prefHeight="27.0" prefWidth="123.0" text="Clear" />
+                                             </children>
+                                          </VBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox prefHeight="83.0" prefWidth="178.0">
+                                                   <children>
+                                                      <Button fx:id="updateButton" mnemonicParsing="false" onAction="#handleUpdateToyAction" prefHeight="27.0" prefWidth="126.0" text="Aktualisieren" />
+                                                      <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeleteToyAction" prefHeight="27.0" prefWidth="127.0" text="Löschen" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <ImageView fx:id="photoImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
