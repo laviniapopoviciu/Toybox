@@ -2,10 +2,10 @@ package db;
 
 
 
-import java.util.HashMap;
+
 import java.util.List;
 
-import org.eclipse.persistence.jpa.PersistenceProvider;
+
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

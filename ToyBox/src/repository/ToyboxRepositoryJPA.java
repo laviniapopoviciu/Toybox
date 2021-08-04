@@ -3,13 +3,10 @@ package repository;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.RollbackException;
 
 import application.DatabaseContext;
-
-
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 import model.Toybox;
 
 public class ToyboxRepositoryJPA implements ToyboxRepository {

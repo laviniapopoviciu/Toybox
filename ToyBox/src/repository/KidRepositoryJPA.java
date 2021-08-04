@@ -3,11 +3,11 @@ package repository;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.RollbackException;
 
 import application.DatabaseContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.RollbackException;
 import model.Kid;
 
 public class KidRepositoryJPA implements KidRepository {
